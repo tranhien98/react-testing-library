@@ -2,16 +2,36 @@ import { render, screen } from '@testing-library/react';
 import Header from '../Header';
 
 describe("Header", () => {
-    it('should render same text passed into title prop', () => {
+    test("should render same text passed into tittle prop", () => {
         render(
-            <Header 
-              title="todo"
-            />
+            <Header title={"todo"}/>
         );
-        const h1Element = screen.getByText(/todo/i);
-        expect(h1Element).toBeInTheDocument();
-    });
+        const element = screen.getByText(/todo/i);
+        expect(element).toBeInTheDocument();
+    })
+
+    // it("should not render the different text", async () => {
+    //     render (
+    //         <Header title={"my header"}/>
+    //     );
+    //     debugger
+    //     const h2Element = await screen.findByText(/test/i);
+    //     expect(h2Element).not.toBeInTheDocument();
+    // })
 })
+
+
+// describe("Header", () => {
+//     it('should render same text passed into title prop', () => {
+//         render(
+//             <Header 
+//               title="todo"
+//             />
+//         );
+//         const h1Element = screen.getByText(/todo/i);
+//         expect(h1Element).toBeInTheDocument();
+//     });
+// })
 
 // it('should render same text passed into title prop', () => {
 //     render(
